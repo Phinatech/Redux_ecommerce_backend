@@ -3,14 +3,14 @@ import cors from "cors";
 import mongoose from "mongoose";
 import AllRoute from "./Controller/AllController";
 const port = 4573;
-const url = "mongodb://localhost/set07Ecomerce";
+const url = "mongodb://127.0.0.1:27017/set07Ecomerce";
 const app = express();
 app.use(express.json());
 app.use(cors());
 
 mongoose.connect(url).then(() => {
-	console.log("database connection established");
-});
+	console.log(`database connection established`)
+})
 
 app.use("/api", AllRoute);
 
